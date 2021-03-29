@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  app: 
+    build: 
+      dockerfile: Dockerfile
+      context: . 
+    image: ${DOCKER_REGISTRY}/market_trades_dashboard:${APP_VERSION}
+    container_name: market_trades_dashboard
+    user: 1000:1000
+    mem_limit: 70m
+    cpu_shares: 2
+    volumes:
+      - ./docs/dataset:/app/docs/dataset
+      - ./logs/runtime:/app/logs/runtime
+      - ./config:/app/config
+      - ./autovisualise_data:/app/autovisualise_data
+    environment: 
+      - DATA_ABS_DIR=./docs/dataset
+    command: streamlit run run_streamlit.py
+    ports:
+      - 8501:8501
