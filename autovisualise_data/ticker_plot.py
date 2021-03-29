@@ -60,7 +60,7 @@ def get_ticker_options(etf_dir:Text) -> List[Text]:
     # Try, get a list of ticker symbols. 
     # Otherwise, output an empty list. 
     try:
-        ticker_list_dir = os.path.join(os.getcwd(), etf_dir) 
+        ticker_list_dir = os.path.join(os.getcwd(), 'docs', 'dataset', etf_dir) 
         re_compile = re.compile(r'[^.][A-Z]')
         ls_tickers = list( filter(re_compile.match, os.listdir(ticker_list_dir)) )
         logger.debug(f'----- Captured a list of ticker symbol for ({etf_dir}) directory.') 
@@ -113,7 +113,7 @@ def read_pickle(
     logger.debug(f'----- Changed to the data warehouse directory.') 
 
     # Path to the directory that contains all the pickle files. 
-    storage_dir = os.path.join(os.getcwd(), etf_dir, ticker, 'storage') 
+    storage_dir = os.path.join(os.getcwd(), 'docs', 'dataset', etf_dir, ticker, 'storage') 
 
     try:
         with open(f'{storage_dir}/{filename}', 'rb') as in_file: 

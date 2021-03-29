@@ -65,6 +65,8 @@ def read_pickle(filename:Text) -> Dict[Text, pd.DataFrame]:
     default_dir = os.getcwd()
     os.chdir(os.environ['DATA_ABS_DIR'])
     logger.debug(f'----- Changed to the data warehouse directory.') 
+    print(f'---------- {os.getcwd()}')
+    print(f'---------- {FRED_DATA_ABS_DIR}/{filename}')
 
     try:
         with open(f'{FRED_DATA_ABS_DIR}/{filename}', 'rb') as in_file: 

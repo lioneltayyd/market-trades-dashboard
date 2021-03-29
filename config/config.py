@@ -17,8 +17,8 @@ YR_RANGE = ['max_yr', 'range_20_yr', 'range_15_yr', 'range_10_yr', 'range_5_yr']
 
 ETF_EQUITY = [ 
     'PPA', 
-    'XLB', 'XLE', 'XLF', 'XLI', 'XLP', 'XLU', 'XLV', 'XLY', 'IYR', 
-    'IYW', 'IYZ', 'XRT', 'XHB',
+    # 'XLB', 'XLE', 'XLF', 'XLI', 'XLP', 'XLU', 'XLV', 'XLY', 'IYR', 
+    # 'IYW', 'IYZ', 'XRT', 'XHB',
 ]
 
 
@@ -36,8 +36,9 @@ PROJECT_PATH = os.getcwd()
 # ETF_SECTOR_ABS_DIR = os.path.join(os.environ['DATA_ABS_DIR'], 'ETF_sector') 
 # ETF_EQUITY_ABS_DIR = os.path.join(os.environ['DATA_ABS_DIR'], 'ETF_equity') 
 
-# Path to the FRED data directory. 
-FRED_DATA_ABS_DIR = os.path.join(os.environ['DATA_ABS_DIR'], 'economic_data', 'FRED') 
+# Path to the FRED data directory.
+os.environ['DATA_ABS_DIR'] = '.'
+FRED_DATA_ABS_DIR = os.path.join(os.environ['DATA_ABS_DIR'], 'docs', 'dataset', 'economic_data', 'FRED') 
 
 # # Compile a list of ticker names. 
 # re_compile = re.compile(r'(?<!\..*)[A-Z]') 
