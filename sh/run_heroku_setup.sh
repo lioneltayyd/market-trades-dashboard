@@ -7,7 +7,7 @@ chmod -R 777 ~/.streamlit;
 echo "\
 [general]\n\
 email=\"\"\n\
-" > /root/.streamlit/credentials.toml
+" > ~/.streamlit/credentials.toml
 
 # Create config file for Streamlit. 
 echo "\
