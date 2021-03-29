@@ -21,7 +21,7 @@ Tools | Description
 
 ## __Data Architecture Overview__
 
-This project focuses on the __Streamlit Dashboard__ section. It's associated with [Bank Card Scraping Repo][malaysia_bank_card_scraping_repo]. 
+This project focuses on the __Streamlit Dashboard__ section. It's associated with [Compile Ticker Data Repo][compile_ticker_data_repo] (Luigi Pipeline section). 
 
 ![Project Architecture Diagram][architecture_overview_img] 
 

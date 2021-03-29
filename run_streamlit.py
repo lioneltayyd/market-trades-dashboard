@@ -1,5 +1,3 @@
-
-
 # %%
 # # Python modules.
 import logging
@@ -145,16 +143,16 @@ if selector_main_tabs == ST_TABS[4]:
 if selector_main_tabs == ST_TABS[5]:
     # For selecting the economic category and showing recession. 
     multiselector_eco_data_1 = st.sidebar.multiselect(
-        label='Select Economic Data For 1st Chart', options=FRED_DATA_GROUPING[selector_eco_category], 
+        label='Select Economic Data For 1st Chart (Max 2)', options=FRED_DATA_GROUPING[selector_eco_category], 
         default=FRED_DATA_GROUPING[selector_eco_category][0], 
     )
     multiselector_eco_data_2 = st.sidebar.multiselect(
-        label='Select Economic Data For 2nd Chart', options=FRED_DATA_GROUPING[selector_eco_category], 
+        label='Select Economic Data For 2nd Chart (Max 2)', options=FRED_DATA_GROUPING[selector_eco_category], 
         default=FRED_DATA_GROUPING[selector_eco_category][1], 
     )
     try: 
         multiselector_eco_data_3 = st.sidebar.multiselect(
-            label='Select Economic Data For 3rd Chart', options=FRED_DATA_GROUPING[selector_eco_category], 
+            label='Select Economic Data For 3rd Chart (Max 2)', options=FRED_DATA_GROUPING[selector_eco_category], 
             default=FRED_DATA_GROUPING[selector_eco_category][2], 
         )
     except: pass
