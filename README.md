@@ -21,7 +21,8 @@ Tools | Description
 
 ## __Data Architecture Overview__
 
-This project focuses on the __Streamlit Dashboard__ section. It's associated with [Compile Ticker Data Repo][compile_ticker_data_repo] (Luigi Pipeline section). 
+This project focuses on the __Streamlit Dashboard__ section. It's associated with [Compile Ticker Data Repo][compile_ticker_data_repo] 
+(Luigi Pipeline section). 
 
 ![Project Architecture Diagram][architecture_overview_img] 
 
@@ -108,6 +109,7 @@ Updating soon...
 [jupytext_percent_img]: ./docs/images/jupytext_percent_example.png
 
 [compile_ticker_data_repo]: https://github.com/lioneltayyd/compile-ticker-data
+[compile_economic_data_repo]: https://github.com/lioneltayyd/compile-economic-data
 
 [holoviews_docs_url]: https://holoviews.org/reference/index.html
 [streamlit_docs_url]: https://docs.streamlit.io/en/stable/
