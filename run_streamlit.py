@@ -156,7 +156,8 @@ if selector_main_tabs == ST_TABS[5]:
             label='Select Economic Data For 3rd Chart (Max 2)', options=FRED_DATA_GROUPING[selector_eco_category], 
             default=FRED_DATA_GROUPING[selector_eco_category][2], format_func=FORMAT_WIDGET_OPTIONS_LOWERCASE, 
         )
-    except: pass
+    except: 
+        multiselector_eco_data_3 = None
     
     # For selecting the date range.
     slider_date_range = st.sidebar.slider('Period', datetime(1960,1,1), datetime(datetime.today().year, 12, 1), XLIM)
@@ -316,4 +317,6 @@ elif selector_main_tabs == ST_TABS[5]:
     with st.beta_expander(label=f'{selector_eco_category} Trend'.title(), expanded=True): 
         st.bokeh_chart(hv.render(line_eco_trend_1, backend='bokeh'), use_container_width=True)
         st.bokeh_chart(hv.render(line_eco_trend_2, backend='bokeh'), use_container_width=True)
-        st.bokeh_chart(hv.render(line_eco_trend_3, backend='bokeh'), use_container_width=True)
+        try: 
+            st.bokeh_chart(hv.render(line_eco_trend_3, backend='bokeh'), use_container_width=True)
+        except: pass
