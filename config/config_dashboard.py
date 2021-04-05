@@ -65,7 +65,8 @@ ST_TABS = [
 # For Widget. 
 # ---------------------------------------------------------------------- 
 
-FORMAT_WIDGET_OPTIONS = lambda x: x.replace('_', ' ').title()
+FORMAT_WIDGET_OPTIONS_TITLE_CASE = lambda x: x.replace('_', ' ').title()
+FORMAT_WIDGET_OPTIONS_LOWERCASE = lambda x: x.replace('_', ' ').lower()
 
 
 # ----------------------------------------------------------------------

@@ -3,6 +3,9 @@
 import os 
 import regex as re
 
+# Personal modules. 
+from config.config_naming import *
+
 
 # ----------------------------------------------------------------------
 # Date & Year Range.
@@ -87,41 +90,85 @@ NON_SPEC_OBSERVANCES = ['valentine', 'event_911', 'veteran']
 
 # FRED economic data grouping. 
 FRED_DATA_GROUPING = {
-    'employment': [
-        'unemploy', 'unemployNat', 'participation', 'popGrowth_YoY'
+    GROUP_EMPLOYMENT: [
+        UNEMPLOY,
+        UNEMPLOY_NAT,
+        UNEMPLOY_PARTICIPATION,
+        POP_GROWTH_YOY,
     ],
-    'household': [
-        'pDispIncome_YoY', 'pConsumeExp_YoY', 'pConsumeExpReal_YoY', 'pSaveRatio', 
-        'mortgageDebt', 'consumeDebt'
+    GROUP_EMPLOYMENT: [
+        PERSONAL_DISPENSABLE_INC_YOY,
+        PERSONAL_CONSUMPTION_EXP_YOY,
+        PERSONAL_CONSUMPTION_EXP_REAL_YOY,
+        PERSONAL_SAVINGS_RATIO,
+        HOUSEHOLD_DEBT,
+        MORTGAGE_DEBT,
+        CONSUMPTION_DEBT,
     ],
-    'manufacture_and_business': [
-        'indusProduce', 'capacUtilise', 'manufactProduce', 'manufactNewOrderExDef', 
-        'manufactNewOrderExTrans', 'onlineSales_YoY', 'onlineSalesRatio', 'retailSales_YoY', 
-        'retailSalesAdv_YoY', 'vehicleSales_YoY', 'businessInventory_YoY', 
-        'businessInventorySalesRatio', 'manufactInventorySalesRatio', 'retailInventorySalesRatio'
+    GROUP_MANUFACT_BUSINESS: [
+        INDUSTRY_PRODUCTION,
+        CAPACITY_UTILISATION,
+        MANUFACT_PRODUCTION,
+        MANUFACT_NEW_ORDER_EX_DEF,
+        MANUFACT_NEW_ORDER_EX_TRANS,
+        ONLINE_SALES_YOY,
+        ONLINE_SALES_RATIO,
+        RETAIL_SALES_YOY,
+        RETAIL_SALES_ADV_YOY,
+        VEHICLE_SALES_YOY,
+        BUSINESS_INVENTORY_YOY,
+        BUSINESS_INVENTORY_SALES_RATIO,
+        MANUFACT_INVENTORY_SALES_RATIO,
+        RETAIL_INVENTORY_SALES_RATIO,
     ],
-    'housing': [
-        'houseStarts', 'houseStarts_YoY', 'newHomeSales', 'newHomeSales_YoY', 'existHomeSales', 
-        'houseInventoryEst'
+    GROUP_HOUSING: [
+        HOUSING_STARTS,
+        HOUSING_STARTS_YOY,
+        NEW_HOME_SALES,
+        NEW_HOME_SALES_YOY,
+        EXIST_HOME_SALES,
+        HOUSING_INVENTORY_EST,
     ],
-    'gov_fiscal': [
-        'govFiscalBudget', 'usGDP_YoY', 'usGDPReal_YoY', 'govBudgetGDP'
+    GROUP_GOV_FISCAL: [
+        GOV_FISCAL_BUDGET,
+        US_GDP_YOY,
+        US_GDP_REAL_YOY,
+        GOV_BUDGET_GDP,
     ],
-    'fed_monetary': [
-        'fedFFR', 'mortgageRate30Yr', 'mortgageRate15Yr', 'primeLoanRate', 'libor3mth', 
-        'excessReserveDepo', 'liqM1_YoY', 'veloM1', 'liqM2_YoY', 'veloM2'
+    GROUP_FED_MONETARY: [
+        FED_FFR,
+        MORTGAGE_RATE_30_YR,
+        MORTGAGE_RATE_15_YR,
+        PRIME_LOAN_RATE,
+        # LIBOR_3_MTH,
+        EXCESS_RESERVE_DEPO,
+        LIQUDITY_M1_YOY,
+        VELOCITY_M1,
+        LIQUDITY_M2_YOY,
+        VELOCITY_M2,
     ],
-    'forex_trade': [
-        'tradeBalance', 'tradeIndexUSD', 'forexUS_CHINA'
+    GROUP_FOREX_TRADE: [
+        TRADE_BALANCE,
+        TRADE_INDEX_USD,
+        FOREX_US_CHINA,
     ],
-    'price': [
-        'usGDP_deflator_YoY', 'pConsume_deflator_YoY', 'producerPPI', 'producerPPI_YoY', 
-        'caseShillerHPI', 'caseShillerHPI_YoY', 'nonFarm_unitLabour', 'nonFarm_unitLabour_YoY'
+    GROUP_PRICE: [
+        US_GDP_DEFLATOR_YOY,
+        PERSONAL_CONSUMPTION_DEFLATOR_YOY,
+        PRODUCER_PPI,
+        PRODUCER_PPI_YOY,
+        CASE_SHILLER_HPI,
+        CASE_SHILLER_HPI_YOY,
+        NON_FARM_UNIT_LABOUR,
+        NON_FARM_UNIT_LABOUR_YOY,
     ],
-    'debt': [
-        'houseDebt', 'govDebt_GDP_ratio', 'houseDebt_GDP_ratio'
+    GROUP_DEBT: [
+        HOUSEHOLD_DEBT,
+        GOV_DEBT_GDP_RATIO,
+        HOUSEHOLD_DEBT_GDP_RATIO,
     ],
-    'bond_yield': [
-        'yield10Yr_minusFFR', 'yield10Yr_minus2Yr'
+    GROUP_BOND_YIELD: [
+        YIELD_10_YR_MINUS_FFR,
+        YIELD_10_YR_MINUS_2_YR,
     ],
 }

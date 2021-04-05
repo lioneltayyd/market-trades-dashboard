@@ -20,7 +20,8 @@ from config.config_dashboard import (
     ST_COLOR,
     ST_BACKGROUND_COLOR,
     ST_TABS,
-    FORMAT_WIDGET_OPTIONS, 
+    FORMAT_WIDGET_OPTIONS_TITLE_CASE, 
+    FORMAT_WIDGET_OPTIONS_LOWERCASE, 
     XLIM, 
 )
 from config.config_logger import setup_logger
@@ -90,7 +91,7 @@ if selector_main_tabs in ST_TABS[:5]:
 elif selector_main_tabs == ST_TABS[5]:
     # For selecting the economic data category. 
     selector_eco_category = st.selectbox(
-        label='Economic Data Category', options=list(FRED_DATA_GROUPING.keys()), index=0, format_func=FORMAT_WIDGET_OPTIONS)
+        label='Economic Data Category', options=list(FRED_DATA_GROUPING.keys()), index=0, format_func=FORMAT_WIDGET_OPTIONS_TITLE_CASE)
 
 
 # %%
@@ -103,13 +104,13 @@ st.sidebar.header('''For Data Exploration''')
 if selector_main_tabs in ST_TABS[:5]:
     # For selecting year range category.
     selector_yr_range = st.sidebar.selectbox(
-        label='Year Range', options=YR_RANGE, index=0, format_func=FORMAT_WIDGET_OPTIONS
+        label='Year Range', options=YR_RANGE, index=0, format_func=FORMAT_WIDGET_OPTIONS_TITLE_CASE
     )
 
 if selector_main_tabs == ST_TABS[0] or selector_main_tabs == ST_TABS[1]:
     # For selecting date interval.
     selector_interval = st.sidebar.selectbox(
-        label='Date Interval', options=FREQ_KEYS, index=0, format_func=FORMAT_WIDGET_OPTIONS
+        label='Date Interval', options=FREQ_KEYS, index=0, format_func=FORMAT_WIDGET_OPTIONS_TITLE_CASE
     ) 
 
     # For selecting the period such as month / week number. 
@@ -122,19 +123,19 @@ if selector_main_tabs == ST_TABS[0] or selector_main_tabs == ST_TABS[1]:
 # For selecting the holiday. 
 if selector_main_tabs == ST_TABS[2]:
     selector_unique_period = st.sidebar.selectbox(
-        label='Holiday Period', options=HOLIDAYS_KEYS, index=0, format_func=FORMAT_WIDGET_OPTIONS
+        label='Holiday Period', options=HOLIDAYS_KEYS, index=0, format_func=FORMAT_WIDGET_OPTIONS_TITLE_CASE
     ) 
 
 # For selecting the TWW period. 
 if selector_main_tabs == ST_TABS[3]:
     selector_unique_period = st.sidebar.selectbox(
-        label='TWW Period', options=SPECIAL_DAYS_KEYS[5:9], index=0, format_func=FORMAT_WIDGET_OPTIONS
+        label='TWW Period', options=SPECIAL_DAYS_KEYS[5:9], index=0, format_func=FORMAT_WIDGET_OPTIONS_TITLE_CASE
     ) 
     
 # For selecting the special period. 
 if selector_main_tabs == ST_TABS[4]:
     selector_unique_period = st.sidebar.selectbox(
-        label='Special Period', options=SPECIAL_DAYS_KEYS[:5], index=0, format_func=FORMAT_WIDGET_OPTIONS
+        label='Special Period', options=SPECIAL_DAYS_KEYS[:5], index=0, format_func=FORMAT_WIDGET_OPTIONS_TITLE_CASE
     ) 
     slider_unique_period_month = None
     if selector_unique_period == 'first_trdr_dom_by_month' or selector_unique_period == 'super_day_by_month':
@@ -144,16 +145,16 @@ if selector_main_tabs == ST_TABS[5]:
     # For selecting the economic category and showing recession. 
     multiselector_eco_data_1 = st.sidebar.multiselect(
         label='Select Economic Data For 1st Chart (Max 2)', options=FRED_DATA_GROUPING[selector_eco_category], 
-        default=FRED_DATA_GROUPING[selector_eco_category][0], 
+        default=FRED_DATA_GROUPING[selector_eco_category][0], format_func=FORMAT_WIDGET_OPTIONS_LOWERCASE, 
     )
     multiselector_eco_data_2 = st.sidebar.multiselect(
         label='Select Economic Data For 2nd Chart (Max 2)', options=FRED_DATA_GROUPING[selector_eco_category], 
-        default=FRED_DATA_GROUPING[selector_eco_category][1], 
+        default=FRED_DATA_GROUPING[selector_eco_category][1], format_func=FORMAT_WIDGET_OPTIONS_LOWERCASE, 
     )
     try: 
         multiselector_eco_data_3 = st.sidebar.multiselect(
             label='Select Economic Data For 3rd Chart (Max 2)', options=FRED_DATA_GROUPING[selector_eco_category], 
-            default=FRED_DATA_GROUPING[selector_eco_category][2], 
+            default=FRED_DATA_GROUPING[selector_eco_category][2], format_func=FORMAT_WIDGET_OPTIONS_LOWERCASE, 
         )
     except: pass
     
