@@ -87,7 +87,7 @@ HOUSEHOLD_DEBT_GDP_RATIO = 'household_debt_gdp_ratio'
 # -------------------------------------------------------
 
 GROUP_EMPLOYMENT = 'employment'
-GROUP_EMPLOYMENT= 'household'
+GROUP_HOUSEHOLD= 'household'
 GROUP_MANUFACT_BUSINESS = 'manufacturer_and_business'
 GROUP_HOUSING = 'housing'
 GROUP_GOV_FISCAL = 'gov_fiscal'
